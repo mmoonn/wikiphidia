@@ -1,4 +1,5 @@
 var express = require('express');
+var port = process.env.PORT || 3000;
 
 express()
 	.set('view engine','ejs')
@@ -9,5 +10,5 @@ express()
 			user: JSON.stringify(req.session.user || null)
 		});
 	})
-	.listen(3000);
-	console.log('Server is running (PORT:3000)')
+	.listen(port);
+	console.log('Server is running on port '+ port);
